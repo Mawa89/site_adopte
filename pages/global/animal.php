@@ -3,7 +3,7 @@
 <?= styleTitreNiveau1("Odin", COLOR_PENSIONNAIRE) ?>
 <div class='row border border-dark rounded-lg m-2 align-items-center perso_bgGreen'>
     <div class="col p-2 text-center">
-        <img src='../../sources/images/Animaux/Chats/Odin/Odin1.jpg' class="img-thumbnail" style="max-height:180px;" alt="Odin1" />
+        <img src='../../sources/images/Animaux/chat/odin/odin1.jpg' class="img-thumbnail" style="max-height:180px;" alt="Odin1" />
     </div>
     <div class="col-2 col-md-1 border-left border-right border-dark text-center">
         <img src='../../sources/images/Autres/icones/ChienOk.png' class="img-fluid m-1" style="width:50px;" alt="chienOk" />
@@ -36,13 +36,13 @@
         </ol>
         <div class="carousel-inner text-center">
             <div class="carousel-item active">
-                <img src="../../sources/images/Animaux/Chats/Odin/Odin7.jpg" class="img-thumbnail" style="height:500px" alt="Odin">
+                <img src="../../sources/images/Animaux/chat/odin/odin7.jpg" class="img-thumbnail" style="height:500px" alt="Odin">
             </div>
             <div class="carousel-item">
-                <img src="../../sources/images/Animaux/Chats/Odin/Odin5.jpg" class="img-thumbnail" style="height:500px" alt="Odin">
+                <img src="../../sources/images/Animaux/chat/odin/odin5.jpg" class="img-thumbnail" style="height:500px" alt="Odin">
             </div>
             <div class="carousel-item">
-                <img src="../../sources/images/Animaux/Chats/Odin/Odin4.jpg" class="img-thumbnail" style="height:500px" alt="Odin">
+                <img src="../../sources/images/Animaux/chat/odin/odin4.jpg" class="img-thumbnail" style="height:500px" alt="Odin">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

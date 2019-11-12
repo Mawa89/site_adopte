@@ -6,7 +6,7 @@
     <div class="col-12 col-lg-6">
         <div class='row border border-dark rounded-lg m-2 align-items-center perso_bgRose' style="height:200px;">
             <div class="col p-2 text-center">
-                <img src='../../sources/images/Animaux/Chats/Framboise/Framboise.jpg' class="img-thumbnail" style="max-height:180px;" alt="Framboise" />
+                <img src='../../sources/images/Animaux/chat/framboise/framboise.jpg' class="img-thumbnail" style="max-height:180px;" alt="Framboise" />
             </div>
             <div class="col-2 border-left border-right border-dark text-center">
                 <img src='../../sources/images/Autres/icones/ChienOk.png' class="img-fluid m-1" style="width:50px;" alt="chienOk" />
@@ -28,7 +28,7 @@
     <div class="col-12 col-lg-6">
         <div class='row border border-dark rounded-lg m-2 align-items-center perso_bgRose' style="height:200px;">
             <div class="col p-2 text-center">
-                <img src='../../sources/images/Animaux/Chats/Framboise/Framboise.jpg' class="img-thumbnail" style="max-height:180px;" alt="Framboise" />
+                <img src='../../sources/images/Animaux/chat/framboise/framboise.jpg' class="img-thumbnail" style="max-height:180px;" alt="Framboise" />
             </div>
             <div class="col-2 border-left border-right border-dark text-center">
                 <img src='../../sources/images/Autres/icones/ChienOk.png' class="img-fluid m-1" style="width:50px;" alt="chienOk" />
@@ -50,7 +50,7 @@
     <div class="col-12 col-lg-6">
         <div class='row border border-dark rounded-lg m-2 align-items-center perso_bgRose' style="height:200px;">
             <div class="col p-2 text-center">
-                <img src='../../sources/images/Animaux/Chats/Framboise/Framboise.jpg' class="img-thumbnail" style="max-height:180px;" alt="Framboise" />
+                <img src='../../sources/images/Animaux/chat/framboise/framboise.jpg' class="img-thumbnail" style="max-height:180px;" alt="Framboise" />
             </div>
             <div class="col-2 border-left border-right border-dark text-center">
                 <img src='../../sources/images/Autres/icones/ChienOk.png' class="img-fluid m-1" style="width:50px;" alt="chienOk" />
@@ -72,7 +72,7 @@
     <div class="col-12 col-lg-6">
         <div class='row border border-dark rounded-lg m-2 align-items-center perso_bgRose' style="height:200px;">
             <div class="col p-2 text-center">
-                <img src='../../sources/images/Animaux/Chats/Framboise/Framboise.jpg' class="img-thumbnail" style="max-height:180px;" alt="Framboise" />
+                <img src='../../sources/images/Animaux/chat/framboise/framboise.jpg' class="img-thumbnail" style="max-height:180px;" alt="Framboise" />
             </div>
             <div class="col-2 border-left border-right border-dark text-center">
                 <img src='../../sources/images/Autres/icones/ChienOk.png' class="img-fluid m-1" style="width:50px;" alt="chienOk" />

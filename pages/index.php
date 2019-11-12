@@ -23,7 +23,9 @@
                 </div>
                 <div class='col-2 text-right pt-1 pr-4 d-none d-lg-block'>
                  ADOPT <br /> Levallois (92300)
-                </div>
+      
+  </div>
+  <div class="section">          </div>
             </div>
         </header>
     </div>

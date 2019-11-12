@@ -3,10 +3,10 @@
 <? styleTitreNiveau1("Actus", COLOR_ACTUS) ; ?>
 
 <?php
-echo styleTitrePost("Posté le : <span class='".COLOR_ACTUS."'>05/2018 </span> par <span class='".COLOR_ACTUS."'>Framboise</span>");?>
+echo styleTitrePost("Posté le : <span class='".COLOR_ACTUS."'>09/2019 </span> par <span class='".COLOR_ACTUS."'>Framboise</span>");?>
 <div class='row no-gutters align-items-center' style="min-height:300px;">
     <div class="col-12 col-md-3 text-center">
-        <img src="../../sources/images/Animaux/Chats/Framboise/Framboise.jpg" alt="Framboise" style="max-height:280px" />
+        <img src="../../sources/images/Animaux/chat/aidie/aidie.jpg" alt="Framboise" style="max-height:280px" />
     </div>
     <div class="col-12 col-md-9">
     Un petit coucou de notre doyenne CHIPIE (20ans) en famille d accueil longue durée chez notre trésorière.<br/>
@@ -19,10 +19,10 @@ Bonne fin de soirée à tous et à bientôt pr la suite des aventures de mamie C
 </div>
 
 
-<?= styleTitrePost("Posté le : <span class='".COLOR_ACTUS."'>05/2018 </span> par <span class='".COLOR_ACTUS."'>Odin</span>");?>
+<?= styleTitrePost("Posté le : <span class='".COLOR_ACTUS."'>09/2019 </span> par <span class='".COLOR_ACTUS."'>Odin</span>");?>
 <div class='row no-gutters align-items-center' style="min-height:300px;">
     <div class="col-12 col-md-3 text-center">
-        <img src="../../sources/images/Animaux/Chats/Framboise/Framboise.jpg" alt="Framboise" style="max-height:280px" />
+        <img src="../../sources/images/Animaux/chat/odin/odin1.jpg" alt="Framboise" style="max-height:280px" />
     </div>
     <div class="col-12 col-md-9">
     Petit rappel rapide de l’histoire.<br/><br/>

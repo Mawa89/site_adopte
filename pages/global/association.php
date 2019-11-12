@@ -39,7 +39,7 @@ echo styleTitreNiveau1("Association ADOPT <br/> Levallois (92300)", COLOR_ASSO);
 <?= styleTitreNiveau2("L'équipe", COLOR_ASSO); ?>
 <div class='row align-items-center'>
     <div class='col-12 col-lg-3 text-center'>
-        <img class='img-fluid' style='height:250px' src='../../sources/images/Animaux/Chats/Odin/Odin.jpg' alt='image Odin' />
+        <img class='img-fluid' style='height:250px' src='../../sources/images/Animaux/chat/odin/odin.jpg' alt='image Odin' />
     </div>
     <div class='col-12 col-lg-9'>
         <span class="badge badge-primary">Julie</span> : présidente<br />
