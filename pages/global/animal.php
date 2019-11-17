@@ -1,22 +1,76 @@
-<?php include("../commons/header.php");?>
+<?php 
+require_once "pdo.php";
+include("../commons/header.php");
 
-<?= styleTitreNiveau1("Odin", COLOR_PENSIONNAIRE) ?>
-<div class='row border border-dark rounded-lg m-2 align-items-center perso_bgGreen'>
+$bdd = connexionPDO();
+$req = '
+SELECT * 
+FROM animal 
+where id_animal = :idAnimal';
+$stmt = $bdd->prepare($req);
+$stmt->bindValue(":idAnimal",$_GET['idAnimal']);
+$stmt->execute();
+$animal = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt->closeCursor();
+
+$stmt = $bdd->prepare('
+select i.id_image,libelle_image,url_image,description_image
+from image i
+inner join contient c on i.id_image = c.id_image
+inner join animal a on a.id_animal = c.id_animal
+where a.id_animal= :idAnimal
+');
+$stmt->bindValue(":idAnimal",$_GET['idAnimal']);
+$stmt->execute();
+$images = $stmt->fetchALL(PDO::FETCH_ASSOC);
+$stmt->closeCursor();
+?>
+
+<?= styleTitreNiveau1($animal['nom_animal'], COLOR_PENSIONNAIRE) ?>
+<div class='row border border-dark rounded-lg m-2 align-items-center <?= ($animal['sexe']) ? "perso_bgGreen" : "perso_bgRose" ?>'>
     <div class="col p-2 text-center">
-        <img src='../../sources/images/Animaux/chat/odin/odin1.jpg' class="img-thumbnail" style="max-height:180px;" alt="Odin1" />
+    <img src='../../sources/images/Animaux/<?= $animal['type_animal'] ?>/<?= $images[0]['url_image'] ?>' class="img-thumbnail" style="max-height:180px;" alt="<?= $image[0]['libelle_image'] ?>" />
     </div>
+    <?php 
+        $iconeChien = "";
+        if($animal['ami_chien'] === "oui") $iconeChien = "ChienOk";
+        else if($animal['ami_chien'] === "non") $iconeChien = "ChienBar";
+        else if($animal['ami_chien'] === "N/A") $iconeChien = "ChienQuest";
+        $iconeChat = "";
+        if($animal['ami_chat'] === "oui") $iconeChat = "ChatOk";
+        else if($animal['ami_chat'] === "non") $iconeChat = "ChatBar";
+        else if($animal['ami_chat'] === "N/A") $iconeChat = "ChatQuest";
+        $inconeEnfant = "";
+        if($animal['ami_enfant'] === "oui") $inconeEnfant = "babyOk";
+        else if($animal['ami_enfant'] === "non") $inconeEnfant = "babyBar";
+        else if($animal['ami_enfant'] === "N/A") $inconeEnfant = "babyQuest";
+    ?>
     <div class="col-2 col-md-1 border-left border-right border-dark text-center">
-        <img src='../../sources/images/Autres/icones/ChienOk.png' class="img-fluid m-1" style="width:50px;" alt="chienOk" />
-        <img src='../../sources/images/Autres/icones/ChatOk.png' class="img-fluid m-1" style="width:50px;" alt="chatOk" />
-        <img src='../../sources/images/Autres/icones/BabyOk.png' class="img-fluid m-1" style="width:50px;" alt="bayOk" />
+        <img src='../../sources/images/Autres/icones/<?= $iconeChien  ?>.png' class="img-fluid m-1" style="width:50px;" alt="chienOk" />
+        <img src='../../sources/images/Autres/icones/<?= $iconeChat  ?>.png' class="img-fluid m-1" style="width:50px;" alt="chatOk" />
+        <img src='../../sources/images/Autres/icones/<?= $inconeEnfant  ?>.png' class="img-fluid m-1" style="width:50px;" alt="bayOk" />
     </div>
     <div class="col-6 col-md-4 text-center">
-        <div class="mb-2">Puce : XXXXXXXXXXX</div>
-        <div class="mb-2">Né : XX/XX/XXXX</div>
+        <div class="mb-2">Puce : <?= $animal['puce'] ?></div>
+        <div class="mb-2">Né : <?= $animal['date_naissance_animal']?></div>
+        
+        <?php 
+            $stmt = $bdd->prepare('
+                select c.libelle_caractere_m, c.libelle_caractere_f
+                from caractere c 
+                inner join dispose d on c.id_caractere = d.id_caractere
+                where id_animal = :idAnimal
+            ');
+            $stmt->bindValue(":idAnimal",$animal['id_animal']);
+            $stmt->execute();
+            $caracteres = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $stmt->closeCursor();
+        ?>
         <div class="my-3">
-            <span class="badge badge-warning m-1 p-2"> douce </span>
-            <span class="badge badge-warning m-1 p-2"> calme </span>
-            <span class="badge badge-warning m-1 p-2"> joueuse </span>
+            <?php foreach ($caracteres as $caractere) {?>
+            <span class="badge badge-warning m-1 p-2 d-none d-sm-inline"> <?= ($animal['sexe']) ? $caractere['libelle_caractere_m'] : $caractere['libelle_caractere_f'] ?></span>
+            
+            <?php } ?>
         </div>
     </div>
     <div class="col-12 col-md-4">
@@ -30,20 +84,16 @@
     <div class="col-12 col-lg-6">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active bg-dark"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1" class="bg-dark"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2" class="bg-dark"></li>
+            <?php foreach($images as $key => $image) : ?>
+                <li data-target="#carouselExampleIndicators" data-slide-to="<?= $key ?>" class="<?php echo ($key === 0) ? "active" : "" ?> bg-dark"></li>
+            <?php endforeach; ?>
         </ol>
         <div class="carousel-inner text-center">
-            <div class="carousel-item active">
-                <img src="../../sources/images/Animaux/chat/odin/odin7.jpg" class="img-thumbnail" style="height:500px" alt="Odin">
-            </div>
-            <div class="carousel-item">
-                <img src="../../sources/images/Animaux/chat/odin/odin5.jpg" class="img-thumbnail" style="height:500px" alt="Odin">
-            </div>
-            <div class="carousel-item">
-                <img src="../../sources/images/Animaux/chat/odin/odin4.jpg" class="img-thumbnail" style="height:500px" alt="Odin">
-            </div>
+            <?php foreach($images as $key => $image) : ?>
+                <div class="carousel-item <?php echo ($key === 0) ? "active" : "" ?>">
+                    <img src="../../sources/images/Animaux/<?= $animal['type_animal'] ?>/<?= $image['url_image']?>" class="img-thumbnail" style="height:500px" alt="<?= $image['libelle_image']?>">
+                </div>
+            <?php endforeach; ?>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -58,27 +108,22 @@
     <div class="col-12 col-lg-6">
         <div>  
             <?= styleTitreNiveau2("Qui suis-je ?", COLOR_PENSIONNAIRE) ?>
-            ODIN est un chaton de 4 semaines,310 gr atteint d'un herpès, notre vétérinaire a dû lui faire une micro-anesthésie pour le soigner tellement il avait mal... Nous allons tenter le tout pour le tout pour le sauver mais voilà il part de loin et gardera sans doute des séquelles s'il s en sort. Il a des soins lourds et douloureux minimum 6 fois par jour. Il a vraiment besoin de vos ondes positives.
-            <br/><br/>
-            Vous pouvez suivre son "parcours" dans la section des actualités
+            <?= $animal['description_animal']?>
         </div>
         <hr />
         <div>
             <img src="../../sources/images/Autres/icones/IconeAdopt.png" alt="" width="50" height="50" class="d-block mx-auto">
-            Odin est la mascotte de l'association et est désormais dans sa famille pour la vie ! <br/><br/>
-            Donc après discussion avec les membres fondateurs de l association, et surtout avec la proposition d Emmy 
-            (notre secrétaire) de le prendre en famille d accueil longue durée MERCI à toi
+            <?= $animal['adoption_desc_animal']?>
         </div>
         <hr />
         <div>
             <img src="../../sources/images/Autres/icones/oeil.jpg" alt="" width="50" height="50" class="d-block mx-auto">
-            AGATE se trouve sur le secteur de Saint Girons 09. Pas de co-voiturage possible.
+            <?= $animal['localisation_animal']?>
         </div>
         <hr />
         <div>
             <img src="../../sources/images/Autres/icones/iconeContrat.png" alt="" width="50" height="50" class="d-block mx-auto">
-            Nous vous demandons de bien réfléchir aux engagements que vous allez devoir prendre envers ce petit coeur : il devra vous accompagner dans vos changements de vie pendant les 15 ans minimum à venir 🙂.<br/> Il faudra également pouvoir subvenir à ses besoins ( nourriture, soins vétérinaire etc ) 
-Un animal n est pas un jouet.
+            <?= $animal['engagement_animal']?>
         </div>
     </div>
 </div>

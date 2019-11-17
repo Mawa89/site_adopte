@@ -17,11 +17,12 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle perso_ColorMenu1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Pensionnaires
-            </a>
+           
+                </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item perso_ColorOrangeMenu" href="../global/pensionnaire.php">Ils cherchent une famille</a>
-                <a class="dropdown-item perso_ColorOrangeMenu" href="#">Famille d'Accueil Longue Durée</a>
-                <a class="dropdown-item perso_ColorOrangeMenu" href="#">Les anciens</a>
+                <a class="dropdown-item perso_ColorOrangeMenu" href="../global/pensionnaires.php?idstatut=<?= ID_STATUT_A_L_ADOPTION ?>">Ils cherchent une famille</a>
+                <a class="dropdown-item perso_ColorOrangeMenu" href="../global/pensionnaires.php?idstatut=<?= ID_STATUT_FALD ?>">Famille d'Accueil Longue Durée</a>
+                <a class="dropdown-item perso_ColorOrangeMenu" href="../global/pensionnaires.php?idstatut=<?= ID_STATUT_ADOPTE ?>">Les anciens</a>
             </div>
         </li>
         <li class="nav-item dropdown">

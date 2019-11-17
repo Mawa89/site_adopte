@@ -11,8 +11,6 @@ $stmt->closeCursor();
 
 echo "<pre>";
 print_r($resultats);
-
-
 ?>
 
 <?php include("../commons/footer.php"); ?>

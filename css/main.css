@@ -38,11 +38,13 @@ background-color: #BD5F5F;
   height: auto; /* hauteur de l'image */
   -webkit-transition: .3s ease-in-out !important; 
   transition: .3s ease-in-out !important; 
+  
 }
 .rond:hover img:hover {
   width: 150px; /* on affiche l'image au carré */
   height: 150px;
   border-radius: 50%; 
+ 
 }
 /*description*/
 .coucou{
@@ -82,6 +84,7 @@ background-color: #BD5F5F;
     width: 100%;
     height:100%;
     transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+    filter:contrast(150%);
   }
   .descriptions{
     position: absolute;

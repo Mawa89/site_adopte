@@ -1,4 +1,4 @@
-<?php
+Attention le chocolat est <?php
 require_once "config.php";
 
 function connexionPDO(){
